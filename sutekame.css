@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* ヘッダー */
+header {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-inner { position: relative; }
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 20px;
+  align-items: center;
+  z-index: 10;
+
+}
+
+.logo img {
+  width: 80px;  /* ←好きなサイズに調整 */
+  height: auto;
+  padding-top: 10px;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* メニュー */
+nav {
+  display: none;
+  background: #ebebeb;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  padding: 10px;
+  padding-left: 35px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul li a:hover {
+  opacity: 0.6;
+}
+
+/* メイン */
+.hero img{
+  width: 100%;
+  height: auto;
+}
+
+.overview {
+  padding: 20px;
+}
+ 
+.oevrview p {
+  font-size: 18px;
+  padding-top: 10px 0;
+}
+
+.sutekame img{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 0%;
+}
+
+.about {
+  padding-top: 20px;
+  background: rgba(162, 214, 168, 0.685);
+}
+/* イベント内容 */
+.syousai {
+  text-align:center;
+}
+.contents {
+  padding: 20px;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 20px;
+  background: #eee;
+  text-align: center;
+}
+
+/* 詳細 */
+.details {
+  padding: 20px;
+  font-size: 15px;
+}
+
+.details h3 {
+  margin-top: 20px;
+}
+
+/* 予約 */
+.reserve {
+  text-align: center;
+}
+
+button {
+  padding: 15px 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+  background: #003d36;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.ehon_top {
+  padding: 20px;
+  background: #ffffff;
+  margin-top: 5px;
+}
+.ehon_top img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+  font-family: sans-serif;
+  background: #ffffff;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.thumbnail {
+  width: 120px;
+  height: 120px;
+  background: #ccc;
+}
+
+#toggleBtn {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* 詳細エリア（閉じてる状態） */
+.detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 10px;
+  padding: 0 20px;
+  border-radius: 8px;
+}
+
+/* 開いた状態 */
+.detail.open {
+  max-height: 200px;
+  padding: 10px;
+}
+
+
+
+.exhibition-top {
+  padding: 20px;
+  margin-top: 5px;
+}
+
+.exhibition-top img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.ehon_footer {
+  padding: 20px;
+  margin-top: 5px;
+}
+
+.insta img {
+  width: 15%;
+  display: block;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #082d08;
+  color: white;
+  padding: 40px;
+}
+
+.otoiawase {
+  padding: 20px;
+  margin-top: 5px;
+  font-size:10px;
+}
