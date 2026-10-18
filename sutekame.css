@@ -84,6 +84,10 @@ nav ul li a:hover {
   padding-top: 0%;
 }
 
+.setumei{
+  font-size: 30px;
+}
+
 .about {
   padding-top: 20px;
   background: rgba(162, 214, 168, 0.685);
