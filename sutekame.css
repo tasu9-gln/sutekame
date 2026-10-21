@@ -168,8 +168,6 @@ body {
   position: relative;
 }
 
-
-/* サムネイルをタップできるようにする */
 .thumbnail img {
   width: 100px;
   height: auto;
