@@ -169,8 +169,8 @@ body {
 }
 
 .thumbnail img {
-  width: 10px;
-  height: 10px;
+  width: 100px;
+  height: auto;
   object-fit: cover;
   display: block;
 }
