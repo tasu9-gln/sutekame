@@ -169,8 +169,7 @@ body {
 }
 
 .thumbnail {
-  width: 120px;
-  height: 120px;
+  width: 10%;
   background: #ccc;
 }
 
