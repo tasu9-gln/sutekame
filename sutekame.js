@@ -32,3 +32,38 @@ btn.addEventListener("click", () => {
     btn.textContent = "▼";
   }
 });
+const modal = document.getElementById("image-modal");
+const modalImage = document.getElementById("modal-image");
+const closeButton = document.getElementById("modal-close");
+
+// 絵本のサムネイルをタップしたら拡大
+document.querySelectorAll(".thumbnail img").forEach((img) => {
+  img.addEventListener("click", () => {
+    modalImage.src = img.src;
+    modalImage.alt = img.alt;
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  });
+});
+
+// 閉じる処理
+function closeModal() {
+  modal.style.display = "none";
+  document.body.style.overflow = "";
+}
+
+closeButton.addEventListener("click", closeModal);
+
+// 画像の外側をタップしたら閉じる
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+// Escキーでも閉じる
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
