@@ -1,69 +1,110 @@
-// ハンバーガーメニュー
+
+/* =========================
+   ハンバーガーメニュー
+========================= */
 const menuBtn = document.getElementById("menu-btn");
 const menu = document.getElementById("menu");
 
-menuBtn.addEventListener("click", () => {
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-});
+if (menuBtn && menu) {
+  menuBtn.addEventListener("click", () => {
+    menu.style.display =
+      menu.style.display === "block" ? "none" : "block";
+  });
+}
 
-// 簡単スライダー
-let index = 0;
+
+/* =========================
+   簡単スライダー
+========================= */
 const slides = document.querySelectorAll(".slide");
 
-setInterval(() => {
+if (slides.length > 0) {
+  let index = 0;
+
+  function showSlide() {
+    slides.forEach((slide) => {
+      slide.style.transform = `translateX(-${index * 100}%)`;
+    });
+
+    index++;
+
+    if (index >= slides.length) {
+      index = 0;
+    }
+  }
+
+  // 最初のスライド位置を設定
   slides.forEach((slide) => {
-    slide.style.transform = `translateX(-${index * 100}%)`;
+    slide.style.transform = "translateX(0)";
   });
 
-  index++;
-  if (index >= slides.length) index = 0;
-}, 3000);
+  // 3秒ごとに切り替え
+  if (slides.length > 1) {
+    setInterval(showSlide, 3000);
+  }
+}
 
+
+/* =========================
+   詳細表示ボタン
+========================= */
 const btn = document.getElementById("toggleBtn");
 const detail = document.getElementById("detailBox");
 
-btn.addEventListener("click", () => {
-  detail.classList.toggle("open");
+if (btn && detail) {
+  btn.addEventListener("click", () => {
+    detail.classList.toggle("open");
 
-  // 矢印の向き変更
-  if (detail.classList.contains("open")) {
-    btn.textContent = "▲";
-  } else {
-    btn.textContent = "▼";
-  }
-});
+    if (detail.classList.contains("open")) {
+      btn.textContent = "▲";
+    } else {
+      btn.textContent = "▼";
+    }
+  });
+}
+
+
+/* =========================
+   絵本の画像を拡大表示
+========================= */
 const modal = document.getElementById("image-modal");
 const modalImage = document.getElementById("modal-image");
 const closeButton = document.getElementById("modal-close");
 
-// 絵本のサムネイルをタップしたら拡大
-document.querySelectorAll(".thumbnail img").forEach((img) => {
-  img.addEventListener("click", () => {
-    modalImage.src = img.src;
-    modalImage.alt = img.alt;
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
+// 拡大表示用のHTMLがあるページだけで実行
+if (modal && modalImage && closeButton) {
+
+  // サムネイルをクリックしたら拡大
+  document.querySelectorAll(".thumbnail img").forEach((img) => {
+    img.addEventListener("click", () => {
+      modalImage.src = img.src;
+      modalImage.alt = img.alt || "絵本の拡大画像";
+
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    });
   });
-});
 
-// 閉じる処理
-function closeModal() {
-  modal.style.display = "none";
-  document.body.style.overflow = "";
+  // モーダルを閉じる
+  function closeModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  // ×ボタンで閉じる
+  closeButton.addEventListener("click", closeModal);
+
+  // 画像の外側をクリックして閉じる
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Escキーで閉じる
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.style.display === "flex") {
+      closeModal();
+    }
+  });
 }
-
-closeButton.addEventListener("click", closeModal);
-
-// 画像の外側をタップしたら閉じる
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-
-// Escキーでも閉じる
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeModal();
-  }
-});
