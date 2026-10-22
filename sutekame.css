@@ -278,10 +278,7 @@ footer {
   font-size:10px;
 }
 
-/* 昨年のイベントへのリンク */
-.last-event a {
-  color: #ffffff;
-}
+
 /* 昨年のイベントへのリンク */
 .last-event a,
 .last-event a:visited,
