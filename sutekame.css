@@ -285,4 +285,5 @@ footer {
 .last-event a:hover,
 .last-event a:active {
   color: #ffffff;
+  font-size: 10px;
 }
