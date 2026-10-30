@@ -96,6 +96,12 @@ nav ul li a:hover {
 .syousai {
   text-align:center;
 }
+.contents iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+}
 .contents {
   padding: 20px;
 }
